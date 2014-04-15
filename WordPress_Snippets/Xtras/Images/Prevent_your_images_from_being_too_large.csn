@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Prevent your images from being too large" description="Simply paste the following in your style.css file:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[.post img {
+    max-width: 500px; /* Adjust this value according to your content area size*/
+    height: auto;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

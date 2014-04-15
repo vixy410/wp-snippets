@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get publishing author" description="Show the display name of the author of a post or page" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php the_author() ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

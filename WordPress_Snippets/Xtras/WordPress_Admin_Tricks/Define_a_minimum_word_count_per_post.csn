@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Define a minimum word count per post" description="Copy the function below and paste it into your functions.php file. The code will automatically raise an error if someone try to publish a post which is below the minimum allowed word count, defined on line 3." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function minWord($content){
+	global $post;
+        $num = 100; //set this to the minimum number of words
+	$content = $post->post_content;
+	if (str_word_count($content) <  $num)
+	    wp_die( __('Error: your post is below the minimum word count.') );
+}
+add_action('publish_post', 'minWord');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

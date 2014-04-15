@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="1st) Add to Top Area" description="Add this snippet to the top area of your admin/theme-options.php file. 
+
+You will edit the array options. There are two parts ( var name + var value ). " preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Radio (1st)
+$radio_group_name = array("option1" => "Option 1","option2" => "Option 2","option3" => "Option 3");  ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

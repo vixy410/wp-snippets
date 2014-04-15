@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="test if an entry is a custom post type ( functions.php )" description=" paste the following function into your functions.php file" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function wpr_is_post_type($type){
+    global $wp_query;
+    if($type == get_post_type($wp_query-&gt;post-&gt;ID)) return true;
+    return false;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get posts from a category set inside theme options" description="If you've added a category select to your options panel, use this snippet in your theme to query from the set category" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<? $YOUR_CATEGORY_IDENTITY = get_option('of_YOUR_CATEGORY_IDENTITY') ?>
+  <?php query_posts('category_name='.$YOUR_CATEGORY_IDENTITY.'&posts_per_page=1'); ?>
+  <?php while (have_posts()) : the_post(); ?>
+<!-- Add your content here -->
+<?php endwhile;?> ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

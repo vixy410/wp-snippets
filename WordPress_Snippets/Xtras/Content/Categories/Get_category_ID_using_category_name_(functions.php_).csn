@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get category ID using category name (functions.php )" description=" start by pasting the function in your functions.php file:" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[function get_category_id($cat_name){
+	$term = get_term_by('name', $cat_name, 'category');
+	return $term->term_id;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

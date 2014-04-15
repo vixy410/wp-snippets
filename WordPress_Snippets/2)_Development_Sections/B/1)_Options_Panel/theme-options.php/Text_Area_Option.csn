@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Text Area Option" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Text Area
+$options[] = array( "name" => "Show a Text Area ( Multi-Line )",
+					"desc" => "Enter text into the field",
+					"id" => $shortname."_textarea",
+					"std" => "Standard value goes here",
+					"type" => "textarea");   ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

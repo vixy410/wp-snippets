@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="How to automatically create a custom field when a post is published" description="Paste the code below into your functions.php file. The only thing you have to do is to edit the cutsom field name on line 6." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[add_action('publish_page', 'add_custom_field_automatically');
+add_action('publish_post', 'add_custom_field_automatically');
+function add_custom_field_automatically($post_ID) {
+	global $wpdb;
+	if(!wp_is_post_revision($post_ID)) {
+		add_post_meta($post_ID, 'field-name', 'custom value', true);
+	}
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

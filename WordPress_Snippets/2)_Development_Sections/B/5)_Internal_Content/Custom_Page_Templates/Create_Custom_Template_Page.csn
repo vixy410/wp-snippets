@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Create Custom Template Page" description="Add this snippet to the top of your custom template page. This snippet is used to notify WordPress to use this template for the associated page." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php
+/*
+Template Name: YOUR CUSTOM TEMPLATE
+*/
+?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

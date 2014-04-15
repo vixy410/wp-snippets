@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Check Category" description="This snippet will check if a given category is equal to the set argument. Use this to only show elements in a desired category." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php  if( in_category( array( 'YOUR-CATEGORY'))){ ?>
+<!-- Your true condition here -->
+
+<?php } ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

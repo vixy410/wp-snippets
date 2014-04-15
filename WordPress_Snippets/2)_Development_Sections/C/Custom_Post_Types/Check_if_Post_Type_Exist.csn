@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Check if Post Type Exist" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[ <?php if ( 'work-sample' == get_post_type() ){ ?>
+  I'm a post type
+  <? } ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="WordPress tip: Get all custom fields from a page or a post (functions.php)" description="Paste the following functions on the functions.php files from your theme. The function have lots of comments so it will help you to understand how it works." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function all_my_customs($id = 0){
+    //if we want to run this function on a page of our choosing them the next section is skipped.
+    //if not it grabs the ID of the current page and uses it from now on.
+    if ($id == 0) :
+        global $wp_query;
+        $content_array = $wp_query-&gt;get_queried_object();
+        $id = $content_array-&gt;ID;
+    endif;   
+
+    //knocks the first 3 elements off the array as they are WP entries and i dont want them.
+    $first_array = array_slice(get_post_custom_keys($id), 3);
+
+    //first loop puts everything into an array, but its badly composed
+    foreach ($first_array as $key =&gt; $value) :
+           $second_array[$value] =  get_post_meta($id, $value, FALSE);
+
+            //so the second loop puts the data into a associative array
+            foreach($second_array as $second_key =&gt; $second_value) :
+                       $result[$second_key] = $second_value[0];
+            endforeach;
+     endforeach;
+
+    //and returns the array.
+    return $result;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

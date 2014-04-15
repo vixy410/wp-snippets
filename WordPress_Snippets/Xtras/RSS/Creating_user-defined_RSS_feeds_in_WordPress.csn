@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Creating user-defined RSS feeds in WordPress" description="If you need a custom RSS feed, like for example, a feed indexing only somes categories + tags, or if you redirected all WordPress RSS feeds to Feedburner but still want to be able to get a category feed, the solution is to use a page template.
+Simply paste the following code in a new file, save it under the name custom-feed.php and upload it on your theme directory.
+Once done, simply write a new page in WordPress Dashboard (Don't type any text it in), and select custom-feed.php as a page template." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php
+/*
+Template Name: Custom Feed
+*/
+
+$numposts = 5;
+
+function yoast_rss_date( $timestamp = null ) {
+  $timestamp = ($timestamp==null) ? time() : $timestamp;
+  echo date(DATE_RSS, $timestamp);
+}
+
+function yoast_rss_text_limit($string, $length, $replacer = '...') {
+  $string = strip_tags($string);
+  if(strlen($string) > $length)
+    return (preg_match('/^(.*)\W.*$/', substr($string, 0, $length+1), $matches) ? $matches[1] : substr($string, 0, $length)) . $replacer;
+  return $string;
+}
+
+$posts = query_posts('showposts='.$numposts);
+
+$lastpost = $numposts - 1;
+
+header("Content-Type: application/rss+xml; charset=UTF-8");
+echo '<?xml version="1.0"?>';
+?><rss version="2.0">
+<channel>
+  <title>Yoast E-mail Update</title>
+  <link>http://yoast.com/</link>
+  <description>The latest blog posts from Yoast.com.</description>
+  <language>en-us</language>
+  <pubDate><?php yoast_rss_date( strtotime($ps[$lastpost]->post_date_gmt) ); ?></pubDate>
+  <lastBuildDate><?php yoast_rss_date( strtotime($ps[$lastpost]->post_date_gmt) ); ?></lastBuildDate>
+  <managingEditor>joost@yoast.com</managingEditor>
+<?php foreach ($posts as $post) { ?>
+  <item>
+    <title><?php echo get_the_title($post->ID); ?></title>
+    <link><?php echo get_permalink($post->ID); ?></link>
+    <description><?php echo '<![MM_BEGIN_NESTED_CDATA['.yoast_rss_text_limit($post->post_content, 500).'<br/><br/>Keep on reading: <a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a>'.']MM_END_NESTED_CDATA]>';  ?></description>
+    <pubDate><?php yoast_rss_date( strtotime($post->post_date_gmt) ); ?></pubDate>
+    <guid><?php echo get_permalink($post->ID); ?></guid>
+  </item>
+<?php } ?>
+</channel>
+</rss>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get Posts from Category" description="In the case that you need to pull posts from a specific category" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php query_posts('category_name=NAME-HERE&posts_per_page=1'); ?>
+ <?php while (have_posts()) : the_post(); ?>
+<!-- Content Here -->
+<?php endwhile;?> ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Using Cron to schedule events in your WordPress blog" description="Just paste this piece of code in your functions.php file:
+On line 1, we created an event, after verifying that an event of the same name wasn't already registered. All we have to do then is to create a function to do what you want (In this example, the function is called my_task_function() and it simply send a dummy email) and hook this function to any WordPress event." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[if (!wp_next_scheduled('my_task_hook')) {
+	wp_schedule_event( time(), 'hourly', 'my_task_hook' );
+}
+
+add_action( 'my_task_hook', 'my_task_function' ); 
+
+function my_task_function() {
+	wp_mail('you@yoursite.com', 'Automatic email', 'Hello, this is an automatically scheduled email from WordPress.');
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

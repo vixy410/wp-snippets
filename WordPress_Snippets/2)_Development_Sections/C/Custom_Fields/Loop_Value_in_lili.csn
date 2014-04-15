@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Loop Value in <li></li>" description="Use this if you need to output the custom key values as a list item loop" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php 
+ $YOURKEY = get_post_meta($post->ID, 'YOUR KEY', false);
+ foreach($YOURKEY as $list_item){ 
+?>
+<li><? echo $list_item; ?></li>
+<?php } ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

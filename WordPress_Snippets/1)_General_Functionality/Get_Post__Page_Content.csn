@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get Post / Page Content" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php the_content(); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

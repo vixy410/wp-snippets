@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Insert custom content after each post" description="You just have to paste the following code into your functions.php and save the file. Once done, custom content will be inserted below each of your posts." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function add_post_content($content) {
+	if(!is_feed() && !is_home()) {
+		$content .= '<p>This article is copyright &copy; '.date('Y').'&nbsp;'.bloginfo('name').'</p>';
+	}
+	return $content;
+}
+add_filter('the_content', 'add_post_content');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

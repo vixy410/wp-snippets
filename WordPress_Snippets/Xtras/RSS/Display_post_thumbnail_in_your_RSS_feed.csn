@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display post thumbnail in your RSS feed" description="Simply paste the following code in your functions.php file. The post thumbnail should be visible once you saved the file." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function diw_post_thumbnail_feeds($content) {
+	global $post;
+	if(has_post_thumbnail($post->ID)) {
+		$content = '<div>' . get_the_post_thumbnail($post->ID) . '</div>' . $content;
+	}
+	return $content;
+}
+add_filter('the_excerpt_rss', 'diw_post_thumbnail_feeds');
+add_filter('the_content_feed', 'diw_post_thumbnail_feeds');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

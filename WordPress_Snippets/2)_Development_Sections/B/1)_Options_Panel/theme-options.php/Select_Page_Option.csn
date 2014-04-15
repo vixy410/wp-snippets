@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Select Page Option" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Select Page
+$options[] = array( "name" => "Select a Page options select",
+					"desc" => "Hit the dropdown and select a page from the listings",
+					"id" => $shortname."_pageoption",
+					"std" => "Select a category:",
+					"type" => "select",
+					"options" => $of_pages);]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Fetch and display RSS feeds" description="Simply paste the following code where you want the feed to be displayed. Don't forget to define feed url at line 4." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php if(function_exists('fetch_feed')) {
+
+	include_once(ABSPATH.WPINC.'/feed.php');
+	$feed = fetch_feed('http://feeds.feedburner.com/catswhoblog');
+
+	$limit = $feed->get_item_quantity(7); // specify number of items
+	$items = $feed->get_items(0, $limit); // create an array of items
+
+}
+if ($limit == 0) echo '<div>The feed is either empty or unavailable.</div>';
+else foreach ($items as $item) : ?>
+
+<div>
+	<a href="<?php echo $item->get_permalink(); ?>"
+	  title="<?php echo $item->get_date('j F Y @ g:i a'); ?>">
+		<?php echo $item->get_title(); ?>
+	</a>
+</div>
+<div>
+	<?php echo substr($item->get_description(), 0, 200); ?>
+	<span>[...]</span>
+</div>
+
+<?php endforeach; ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

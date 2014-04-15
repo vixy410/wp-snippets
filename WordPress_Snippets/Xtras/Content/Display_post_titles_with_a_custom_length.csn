@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display post titles with a custom length" description=" you can use the function on your theme files. Just pass how many characters you want to display as a parameter. In the following exemple, only the first 20 chars of the title will be displayed:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php ODD_title(20); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Check Box Option" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Check Box
+ $options[] = array( "name" => "Show a Check Box Option",
+					"desc" => "Check this box for displaying true or false results",
+					"id" => $shortname."_checkbox",
+					"std" => "false",
+					"type" => "checkbox"); ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

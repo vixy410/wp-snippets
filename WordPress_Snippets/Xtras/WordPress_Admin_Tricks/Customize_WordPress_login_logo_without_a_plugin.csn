@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Customize WordPress login logo without a plugin" description="Nothing hard with this recipe. The only thing you have to do is to copy the following piece of code, and paste it on your functions.php file:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function my_custom_login_logo() {
+    echo '<style type="text/css">
+        h1 a { background-image:url('.get_bloginfo('template_directory').'/images/custom-login-logo.gif) !important; }
+    </style>';
+}
+
+add_action('login_head', 'my_custom_login_logo');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

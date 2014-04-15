@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Show a Menu" description="Use this snippet to display a menu system in your theme. Keep in mind that the output markup = <ul><li><ul><li></li></ul></li></ul>" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php wp_nav_menu(array('theme_location' => 'primary-menu')); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

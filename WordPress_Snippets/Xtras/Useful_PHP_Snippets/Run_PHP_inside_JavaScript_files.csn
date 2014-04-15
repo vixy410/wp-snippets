@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Run PHP inside JavaScript files" description="When coding in JavaScript, it can very useful to be able to use PHP inside the .js files, for example for retrieving data from your database. Here is a snippet to allow the use of PHP inside .js files.
+Source: http://www.kavoir.com/2010/07/how-to-execute-run-php-code-inside-javascript-files.html" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[AddType application/x-httpd-php .js
+AddHandler x-httpd-php5 .js
+
+<FilesMatch "\.(js|php)$">
+SetHandler application/x-httpd-php
+</FilesMatch>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

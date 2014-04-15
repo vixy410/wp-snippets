@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="How to detect mobile visitors on your WordPress blog" description="To achieve this recipe, you first have to get the code from detectmobilebrowsers.mobi and upload it to your theme directory.
+
+Once done, simply open your header.php file and place the following at the top of the file. Don't forget to edit line 5 according to the page where you'd like to redirect mobile users." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[include('mobile_device_detect.php');
+$mobile = mobile_device_detect();
+
+if ($mobile==true) {
+  header( 'Location: http://your-website.com/?theme=Your_Mobile_Theme' ) ;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

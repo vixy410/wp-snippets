@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display_dates_as_“time_ago”,_the_easy_way.csn" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[Posted <?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

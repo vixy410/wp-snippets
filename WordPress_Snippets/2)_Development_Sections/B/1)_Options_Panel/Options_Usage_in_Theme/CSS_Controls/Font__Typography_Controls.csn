@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Font / Typography Controls" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[ <?php /*Get Typography Arry*/ $fontoption = get_option('of_fontoption'); ?>
+ font-size:<?php echo $fontoption["size"]; ?>px !important;
+ font-family:<?php echo $fontoption["face"];?> !important;
+ color:<?php echo $fontoption["color"]; ?> !important;
+ font-style:<?php echo $fontoption["style"]; ?> !important;
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

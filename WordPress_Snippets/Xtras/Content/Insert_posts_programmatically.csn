@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Insert posts programmatically" description="Just paste the following code anywhere on WordPress theme files. If you want to test, I recommend pasting it in your functions.php file.
+That's all you have to do. Once executed, this code will insert a new post into WordPress database." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[global $user_ID;
+$new_post = array(
+    'post_title' => 'My New Post',
+    'post_content' => 'Lorem ipsum dolor sit amet...',
+    'post_status' => 'publish',
+    'post_date' => date('Y-m-d H:i:s'),
+    'post_author' => $user_ID,
+    'post_type' => 'post',
+    'post_category' => array(0)
+);
+$post_id = wp_insert_post($new_post);]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Site Background Color" description="Sample for setting the background color" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[html { background:<? echo get_option('of_bg_color') ?>; }]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

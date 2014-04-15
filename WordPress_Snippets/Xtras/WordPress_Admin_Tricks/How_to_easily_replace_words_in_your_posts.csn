@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="How to easily replace words in your posts" description="Simply put words to replace in the array on line 4. Once done, paste the code into your function.php file, save the file, and you're done!" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function replace_text_wps($text){
+    $replace = array(
+        // 'WORD TO REPLACE' => 'REPLACE WORD WITH THIS'
+        'wordpress' => '<a href="#">wordpress</a>',
+        'excerpt' => '<a href="#">excerpt</a>',
+        'function' => '<a href="#">function</a>'
+    );
+    $text = str_replace(array_keys($replace), $replace, $text);
+    return $text;
+}
+
+add_filter('the_content', 'replace_text_wps');
+add_filter('the_excerpt', 'replace_text_wps');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

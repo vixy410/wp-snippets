@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Theme Declaration (style.css)" description="This comment block is mandatory. It is used to provide WordPress with basic information about your theme" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[/*
+Theme Name: Theme Name
+Theme URI: 
+Description: Custom WordPress theme by YOUR COMPANY
+Version: 1.0
+Author: YOUR COMPANY
+Author URI: http://YOURCOMPANY.com
+Tags: 
+
+*/
+
+/* -- Header -- */
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

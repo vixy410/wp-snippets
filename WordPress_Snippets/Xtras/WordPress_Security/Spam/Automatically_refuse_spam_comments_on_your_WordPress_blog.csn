@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Automatically refuse spam comments on your WordPress blog" description="Paste the following code in your functions.php. Comment that contain any of the words contained within the $bad_comment_content array will be automatically rejected." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function in_comment_post_like($string, $array) {
+	foreach($array as $ref) { if(strstr($string, $ref)) { return true; } }
+	return false;
+}
+function drop_bad_comments() {
+	if (!empty($_POST['comment'])) {
+		$post_comment_content = $_POST['comment'];
+		$lower_case_comment = strtolower($_POST['comment']);
+		$bad_comment_content = array(
+			'viagra',
+			'hydrocodone',
+			'hair loss',
+			'[url=http',
+			'[link=http',
+			'xanax',
+			'tramadol',
+			'russian girls',
+			'russian brides',
+			'lorazepam',
+			'adderall',
+			'dexadrine',
+			'no prescription',
+			'oxycontin',
+			'without a prescription',
+			'sex pics',
+			'family incest',
+			'online casinos',
+			'online dating',
+			'cialis',
+			'best forex',
+			'amoxicillin'
+		);
+		if (in_comment_post_like($lower_case_comment, $bad_comment_content)) {
+			$comment_box_text = wordwrap(trim($post_comment_content), 80, "\n  ", true);
+			$txtdrop = fopen('/var/log/httpd/wp_post-logger/nullamatix.com-text-area_dropped.txt', 'a');
+			fwrite($txtdrop, "  --------------\n  [COMMENT] = " . $post_comment_content . "\n  --------------\n");
+			fwrite($txtdrop, "  [SOURCE_IP] = " . $_SERVER['REMOTE_ADDR'] . " @ " . date("F j, Y, g:i a") . "\n");
+			fwrite($txtdrop, "  [USERAGENT] = " . $_SERVER['HTTP_USER_AGENT'] . "\n");
+			fwrite($txtdrop, "  [REFERER  ] = " . $_SERVER['HTTP_REFERER'] . "\n");
+			fwrite($txtdrop, "  [FILE_NAME] = " . $_SERVER['SCRIPT_NAME'] . " - [REQ_URI] = " . $_SERVER['REQUEST_URI'] . "\n");
+			fwrite($txtdrop, '--------------**********------------------'."\n");
+			header("HTTP/1.1 406 Not Acceptable");
+			header("Status: 406 Not Acceptable");
+			header("Connection: Close");
+			wp_die( __('bang bang.') );
+		}
+	}
+}
+add_action('init', 'drop_bad_comments');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

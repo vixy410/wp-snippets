@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="URL for Themes root directory" description="Use this snippet to get the absolute url to the activated theme directory." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<? bloginfo('stylesheet_directory'); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

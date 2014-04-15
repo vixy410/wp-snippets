@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="display widget area - single" description="Use this snippet inside your theme to display a widget area" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php if ( !function_exists('dynamic_sidebar')
+|| !dynamic_sidebar('YOUR-WIDGET-NAME') ) : ?>
+<?php endif; ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

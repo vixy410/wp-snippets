@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Menu functions.php Code" description="Use this snippet to initialize the menu system for your theme" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?
+//add dynamic menu
+add_action( 'init', 'register_my_menus' );
+function register_my_menus() {
+	register_nav_menus(
+		array(
+			'primary-menu' => __( 'Primary Menu' ),
+			'secondary-menu' => __( 'Secondary Menu' ),
+			'footer-menu' => __( 'Footer Menu' )
+		)
+	);
+}
+?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

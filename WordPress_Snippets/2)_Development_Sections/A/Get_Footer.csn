@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get Footer" description="Basic function to get the theme footer.php file" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<? get_footer(); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

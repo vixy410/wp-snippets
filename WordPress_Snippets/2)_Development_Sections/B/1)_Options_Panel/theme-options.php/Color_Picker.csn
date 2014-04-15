@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Color Picker" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Color Picker
+$options[] = array( "name" => "Use Color Picker",
+					"desc" => "Select or enter a color",
+					"id" => $shortname."_colorpic",
+					"std" => "#80A1AD",
+					"type" => "color"); ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

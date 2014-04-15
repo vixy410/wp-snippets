@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Llatest Google+ update on your WordPress blog" description="Simply paste the following code where you want to display your latest Google+ update. Don't forget to put your Google+ ID on line 3." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php
+	include_once(ABSPATH.WPINC.'/rss.php');
+	$googleplus = fetch_feed("http://plusfeed.appspot.com/103329092193061943712"); // Replace 103329092193061943712 by your own ID
+	echo '<a href="';
+	echo $googleplus->items[0]['link']; echo '">';
+	echo $googleplus->items[0]['summary'];
+	echo '';
+?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="WordPress: How to get custom fields outside the loop" description="To display a custom field value outside the loop, simply use the following code. Don't forget to replace customField on line 4 by the name of the custom field you want to display." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php
+global $wp_query;
+$postid = $wp_query->post->ID;
+echo get_post_meta($postid, 'customField', true);
+?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

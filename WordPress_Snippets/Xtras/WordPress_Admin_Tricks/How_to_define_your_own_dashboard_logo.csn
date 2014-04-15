@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="How to define your own dashboard logo" description="The first thing to do is to get your logo ready. Size might be 30*31px and the logo must be uploaded the images directory of your theme dir.
+For exemple, if you're using the rockstar theme from WooThemes, your logo must be uploaded to wp-content/themes/rockstar/images.
+
+Once done, open you functions.php file and paste the following code in it:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[add_action('admin_head', 'my_custom_logo');
+
+function my_custom_logo() {
+   echo '
+      <style type="text/css">
+         #header-logo { background-image: url('.get_bloginfo('template_directory').'/images/custom-logo.gif) !important; }
+      </style>
+   ';
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Rest Query" description="Use this when adding more than one WordPress loop to a template file." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[wp_reset_query();]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

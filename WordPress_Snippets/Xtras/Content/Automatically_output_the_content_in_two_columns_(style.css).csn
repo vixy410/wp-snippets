@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Automatically output the content in two columns (style.css)" description="Don't forget to add the following styles to your style.css file :" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[.content_right, .content_left{
+    float:left;
+    width:45%;
+}
+
+.content_left{
+    padding-right:5%;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

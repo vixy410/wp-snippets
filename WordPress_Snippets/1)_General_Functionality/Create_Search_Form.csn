@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Create Search Form" description="This snippet will add a search form to your theme." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+        <input type="text" class="home_pge_input_field" placeholder="Search Site" value="" name="s" id="s" />
+        <!--<input type="submit" id="searchsubmit" value="Search" />-->
+</form>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

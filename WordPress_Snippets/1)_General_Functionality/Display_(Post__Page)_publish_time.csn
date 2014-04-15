@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display (Post / Page) publish time" description="Show the time of publish for the current version of a post or page." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php echo get_the_time(); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

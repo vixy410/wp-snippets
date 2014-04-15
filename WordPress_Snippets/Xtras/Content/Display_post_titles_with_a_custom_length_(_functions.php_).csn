@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display post titles with a custom length ( functions.php )" description="The first thing to do is to create the function. Open your functions.php file and paste this code:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[ function ODD_title($char) {
+         $title = get_the_title($post->ID);
+         $title = substr($title,0,$char);
+         echo $title;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

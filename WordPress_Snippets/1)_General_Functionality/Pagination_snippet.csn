@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Pagination snippet" description="Show older / newer posts. Keep this inside your loop." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<div class="navigation">
+  <div class="alignleft">
+    <?php next_posts_link('&laquo; Older Entries') ?>
+  </div>
+  <div class="alignright">
+    <?php previous_posts_link('Newer Entries &raquo;') ?>
+  </div>
+</div>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

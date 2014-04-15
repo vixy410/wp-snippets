@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Current URL Detect" description="Use this snippet as a foundation for discovering an exact url. Because the location is stored inside $site, you are able to use this location any way you like." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?
+# Using REQUEST_URI to get current url
+$site = "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI'];
+?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

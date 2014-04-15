@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Change excerpt length depending of the category" description="No need to modify your theme files. Simply paste the code into your functions.php file. Don't forget to change the category ID on line 3!" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[add_filter('excerpt_length', 'my_excerpt_length');
+function my_excerpt_length($length) {
+    if(in_category(14)) {
+        return 13;
+    } else {
+        return 60;
+    }
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

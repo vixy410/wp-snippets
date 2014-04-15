@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get post / page title" description="" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php the_title(); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

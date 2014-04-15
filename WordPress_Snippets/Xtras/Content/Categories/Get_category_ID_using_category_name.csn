@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get category ID using category name" description="call the function with your category name as a parameter. " preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[$category_ID = get_category_id('WordPress Tutorials');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

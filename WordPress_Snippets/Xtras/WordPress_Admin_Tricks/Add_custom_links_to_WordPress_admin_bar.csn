@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Add custom links to WordPress admin bar" description="To add a custom link to WordPress admin bar, simply paste the following code into your functions.php file. Modify the code as needed to fit your needs." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function mytheme_admin_bar_render() {
+	global $wp_admin_bar;
+	$wp_admin_bar->add_menu( array(
+		'parent' => 'new-content', // use 'false' for a root menu, or pass the ID of the parent menu
+		'id' => 'new_media', // link ID, defaults to a sanitized title value
+		'title' => __('Media'), // link title
+		'href' => admin_url( 'media-new.php'), // name of file
+		'meta' => false // array of any of the following options: array( 'html' => '', 'class' => '', 'onclick' => '', target => '', title => '' );
+	));
+}
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

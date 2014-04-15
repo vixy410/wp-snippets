@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="How to change the dashboard footer text" description="Paste the following on your functions.php, save the file, and you're done" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function remove_footer_admin () {
+    echo "Your own text";
+} 
+
+add_filter('admin_footer_text', 'remove_footer_admin');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

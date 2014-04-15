@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Show the “home” link on wp_nav_menu default fallback function" description="You just have to paste the following code into your theme functions.php file:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function my_page_menu_args($args) {
+	$args['show_home'] = true;
+	return $args;
+}
+add_filter('wp_page_menu_args', 'my_page_menu_args');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="1) Initialize Custom Post Types" description="name – this is the (probably plural) name for our new post type
+singular_name – how you’d refer to this in the singular (such as ‘Add new ****’)
+You can probably work out the rest of $labels for yourself, as they simply refer to different circumstances in which the name of your custom post type would be used.
+
+And now $args:
+
+public – should they be shown in the admin UI
+show_ui – should we display an admin panel for this custom post type
+menu_icon – a custom icon for the admin panel
+capability_type - WordPress will treat this as a ‘post’ for read, edit, and delete capabilities
+hierarchical – is it hierarchical, like pages
+rewrite – rewrites permalinks using the slug ‘portfolio’
+supports – which items do we want to display on the add/edit post page" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[add_action('init', 'portfolio_register');
+ 
+function portfolio_register() {
+ 
+	$labels = array(
+		'name' => _x('My Portfolio', 'post type general name'),
+		'singular_name' => _x('Portfolio Item', 'post type singular name'),
+		'add_new' => _x('Add New', 'portfolio item'),
+		'add_new_item' => __('Add New Portfolio Item'),
+		'edit_item' => __('Edit Portfolio Item'),
+		'new_item' => __('New Portfolio Item'),
+		'view_item' => __('View Portfolio Item'),
+		'search_items' => __('Search Portfolio'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash'),
+		'parent_item_colon' => ''
+	);
+ 
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'menu_icon' => get_stylesheet_directory_uri() . '/article16.png',
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array('title','editor','thumbnail')
+	  ); 
+ 
+	register_post_type( 'portfolio' , $args );
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

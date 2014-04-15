@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display Site Name" description="Show the site name ( set inside WordPress General Settings )" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<? bloginfo('name'); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

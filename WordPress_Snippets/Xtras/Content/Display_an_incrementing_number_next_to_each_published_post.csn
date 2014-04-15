@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display an incrementing number next to each published post" description="you can display the post nimber by pasting the following on your theme file, within the loop" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php echo get_post_meta($post->ID,'incr_number',true); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

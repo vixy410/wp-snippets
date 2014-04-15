@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Favicon" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Favicon
+$options[] = array( "name" => "Custom Favicon",
+					"desc" => "Upload a 16px x 16px Png/Gif image that will represent your website's favicon.",
+					"id" => $shortname."_custom_favicon",
+					"std" => "",
+					"type" => "upload"); 
+					$url =  OF_DIRECTORY . '/admin/images/'; ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

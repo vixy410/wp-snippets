@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Control excerpt character length" description="Add this snippet to your functions.php file to control the character length of your post excerpts." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?
+function new_excerpt_length($length) {
+	return 8;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get page from Page Options select" description="If you've added a page select to your options panel, use this snippet in your theme to query from the set page" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<? $YOUR_PAGE_IDENTITY = get_option('of_YOUR_PAGE_IDENTITY') ?>
+<?php $getpage = new WP_Query('pagename='.$YOUR_PAGE_IDENTITY.''); while ($getpage->have_posts()) : $getpage->the_post(); $do_not_duplicate = $post->ID; ?>
+    <div id="page-area">
+        <h3 class="page-page-title"><?php the_title(); ?></h3>
+        <?php the_content(); ?>
+    </div>
+<?php endwhile; wp_reset_query();?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

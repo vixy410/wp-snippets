@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get Comments Template" description="This snippet will pull the existing comments template - ***Note: If you do not create a comments template, the default wordpress ( which isn't bad ) template will be used." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php comments_template(); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

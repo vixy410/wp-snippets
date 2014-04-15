@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Show an urgent message in the WordPress admin area" description="The following is a snippet of my custom function that shows a message to the user. This be used from anywhere in your theme or plugin if you wanted to give the user a standard message. e.g. "Settings successfully updated" or something similar." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[/**
+ * Generic function to show a message to the user using WP's
+ * standard CSS classes to make use of the already-defined
+ * message colour scheme.
+ *
+ * @param $message The message you want to tell the user.
+ * @param $errormsg If true, the message is an error, so use
+ * the red message style. If false, the message is a status
+  * message, so use the yellow information message style.
+ */
+function showMessage($message, $errormsg = false)
+{
+	if ($errormsg) {
+		echo '<div id="message" class="error">';
+	}
+	else {
+		echo '<div id="message" class="updated fade">';
+	}
+
+	echo "<p><strong>$message</strong></p></div>";
+}    
+Now we just add a hook to the admin notices function to show our custom message.
+
+/**
+ * Just show our message (with possible checking if we only want
+ * to show message to certain users.
+ */
+function showAdminMessages()
+{
+    // Shows as an error message. You could add a link to the right page if you wanted.
+    showMessage("You need to upgrade your database as soon as possible...", true);
+
+    // Only show to admins
+    if (user_can('manage_options') {
+       showMessage("Hello admins!");
+    }
+}
+
+/**
+  * Call showAdminMessages() when showing other admin
+  * messages. The message only gets shown in the admin
+  * area, but not on the frontend of your WordPress site.
+  */
+add_action('admin_notices', 'showAdminMessages');]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

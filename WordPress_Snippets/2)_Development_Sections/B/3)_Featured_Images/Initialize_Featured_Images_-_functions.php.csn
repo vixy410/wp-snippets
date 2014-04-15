@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Initialize Featured Images - functions.php" description="Add this snipet to your functions.php file to initalize the Featured Images functionality in your wordpress admin" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?
+//add support for featured images
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size(180);
+?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

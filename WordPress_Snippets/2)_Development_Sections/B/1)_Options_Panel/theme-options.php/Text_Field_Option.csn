@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Text Field Option" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Text Field
+$options[] = array( "name" => "Show a Text Field ( Single Line )",
+					"desc" => "Enter text into the field",
+					"id" => $shortname."_textfield",
+					"std" => "Standard value goes here",
+					"type" => "text");   ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

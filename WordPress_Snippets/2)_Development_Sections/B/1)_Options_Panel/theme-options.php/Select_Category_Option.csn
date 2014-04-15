@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Select Category Option" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Select Category
+$options[] = array( "name" => "Select a Category options select",
+					"desc" => "Hit the dropdown and select a category from the listings",
+					"id" => $shortname."_categoryoption",
+					"std" => "Select a category:",
+					"type" => "select",
+					"options" => $of_categories); ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

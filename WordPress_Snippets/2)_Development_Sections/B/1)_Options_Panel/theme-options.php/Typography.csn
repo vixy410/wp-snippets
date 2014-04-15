@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Typography" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Typography
+$options[] = array( "name" => "Set font controls",
+					"desc" => "Control how font displays",
+					"id" => $shortname."_typography",
+					"std" => array('size' => '16','unit' => 'em','face' => 'verdana','style' => 'bold italic','color' => '#123456'),
+					"type" => "typography"); 					 ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

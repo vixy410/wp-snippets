@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Automatically add a search field to your navigation menu" description="Open your functions.php file, and paste the following code. The search field will be displayed once you saved the file." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[add_filter('wp_nav_menu_items','add_search_box', 10, 2);
+function add_search_box($items, $args) {
+
+        ob_start();
+        get_search_form();
+        $searchform = ob_get_contents();
+        ob_end_clean();
+
+        $items .= '<li>' . $searchform . '</li>';
+
+    return $items;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

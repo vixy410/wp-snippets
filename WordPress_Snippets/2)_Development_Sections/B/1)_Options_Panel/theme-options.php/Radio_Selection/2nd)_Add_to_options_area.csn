@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="2nd) Add to options area" description="Add this snippet to the options area of your admin/theme-options.php file. 
+
+Be sure to change the id to be the same as you set in 1st step" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//Radio (2nd)
+$options[] = array( "name" => "Show Contact area in Sidebar",
+				 "desc" => "Radio select with default of 'one'.",
+				 "id" => $shortname."_radiogroup",
+				 "std" => "option1",
+				 "type" => "radio",
+				 "options" => $radio_group_name); ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

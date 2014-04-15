@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get Home URL" description="Use this snippet to get the dynamic url of the wordpress site." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<? bloginfo('home'); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

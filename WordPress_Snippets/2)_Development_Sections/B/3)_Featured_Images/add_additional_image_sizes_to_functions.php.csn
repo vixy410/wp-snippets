@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="add additional image sizes to functions.php" description="Use this snippet inside the existing functions.php snippet for Featured Images. This snippet allows you to add additional image sizes" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[add_image_size( 'LOCATION-NAME', 200, 100 );]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

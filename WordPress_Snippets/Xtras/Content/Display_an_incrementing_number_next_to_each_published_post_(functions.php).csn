@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display an incrementing number next to each published post (functions.php)" description="The first thing to do is to paste the function into your functions.php file:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[function updateNumbers() {
+  global $wpdb;
+  $querystr = "SELECT $wpdb->posts.* FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'post' ";
+$pageposts = $wpdb->get_results($querystr, OBJECT);
+  $counts = 0 ;
+  if ($pageposts):
+    foreach ($pageposts as $post):
+      setup_postdata($post);
+      $counts++;
+      add_post_meta($post->ID, 'incr_number', $counts, true);
+      update_post_meta($post->ID, 'incr_number', $counts);
+    endforeach;
+  endif;
+}  
+
+add_action ( 'publish_post', 'updateNumbers' );
+add_action ( 'deleted_post', 'updateNumbers' );
+add_action ( 'edit_post', 'updateNumbers' );]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

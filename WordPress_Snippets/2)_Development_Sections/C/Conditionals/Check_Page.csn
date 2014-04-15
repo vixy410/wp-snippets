@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Check Page" description="Check if the visitor is on a certain page." preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php if(is_page('YOUR-PAGE')) { ?>
+   //your stuff here
+<?php } ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

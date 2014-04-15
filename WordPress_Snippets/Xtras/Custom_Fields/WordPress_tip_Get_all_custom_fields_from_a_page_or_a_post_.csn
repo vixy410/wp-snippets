@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="WordPress tip: Get all custom fields from a page or a post " description=" you can use the function like this:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[$result = all_my_customs();
+echo $result['my_meta_key'];]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

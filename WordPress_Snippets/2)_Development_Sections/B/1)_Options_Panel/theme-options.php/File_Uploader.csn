@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="File Uploader" description="" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[//File Uploader
+$options[] = array( "name" => "File Upload",
+					"desc" => "Upload a file (img, pdf, etc...), or specify the address of your online file. (http://yoursite.com/logo.png)",
+					"id" => $shortname."_files",
+					"std" => "",
+					"type" => "upload");
+					
+$url =  OF_DIRECTORY . '/admin/images/';					 ]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name=" Better page navigation" description="This recipe is extremely easy to implement : open you index.php file and replace your current navigation by the following:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php if ($paged > 1) { ?>
+
+	<div class="navigation">
+		<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
+		<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+	</div>
+
+<?php } else { ?>
+
+	<div class="navigation">
+		<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
+		<div class="alignright"><a href="http://perishablepress.com/press/archives/">Site Archives &raquo;</a></div>
+	</div>
+
+<?php } ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get Sidebar" description="Basic function to get the theme sidebar.php file" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<? get_sidebar(); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

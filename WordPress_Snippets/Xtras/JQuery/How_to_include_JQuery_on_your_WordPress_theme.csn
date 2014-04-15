@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="How to include JQuery on your WordPress theme" description="The first thing you have to know is that WordPress already have JQuery (It is used in the dashboard) so you don't need to download a new copy of JQuery to your WordPress server.
+Then, we just have to use the wp_enqueue_script() function, which automatically enqueue a Javascript file in your theme header.
+Open your header.php file and paste the following within the <head> and </head> tags:" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<?php wp_enqueue_script("jquery"); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

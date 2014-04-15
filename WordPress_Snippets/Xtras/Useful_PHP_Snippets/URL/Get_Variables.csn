@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Get Variables" description="" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[$_GET["fname"]]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

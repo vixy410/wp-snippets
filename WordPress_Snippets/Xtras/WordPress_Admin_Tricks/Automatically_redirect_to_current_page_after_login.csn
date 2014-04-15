@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Automatically redirect to current page after login" description="WordPress have a great function named wp_login_url(). This function displays a link to your dashboard login page. It accept one parameter: an url to redirect after the user successfully logged in. By using get_permalink() as a parameter, you'll redirect the user to the current page." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<a href="<?php echo wp_login_url(get_permalink()); ?>" title="Login">Login to view</a>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

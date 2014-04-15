@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="How to remove WordPress 3.1 admin bar" description="Paste the following piece of code into your functions.php file, save it and goodbye admin bar." preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[wp_deregister_script('admin-bar');
+wp_deregister_style('admin-bar');
+remove_action('wp_footer','wp_admin_bar_render',1000);]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

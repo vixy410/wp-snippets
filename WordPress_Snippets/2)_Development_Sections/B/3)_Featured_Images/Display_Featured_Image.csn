@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="Display Featured Image" description="Use this snippet to display the featured image" preview="code" type="block">
+<insertText location="beforeSelection">
+<![CDATA[<?php the_post_thumbnail('LOCATION-NAME'); ?>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>
